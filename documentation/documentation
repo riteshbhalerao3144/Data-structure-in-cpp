@@ -1,0 +1,226 @@
+Call Log Merger Using a Linked List — Complete Project Guide
+A Call Log Merger using a Linked List is a data structures project that combines call records from two or more call logs into one unified call log. It can store, display, search, sort, and merge call records using a linked list.
+
+This project is useful for learning Data Structures and Algorithms (DSA), especially linked lists, insertion, traversal, searching, sorting, and merging.
+
+1. What is a Call Log Merger?
+A call log is a collection of records containing details about phone calls, such as:
+
+Caller name
+
+Phone number
+
+Call date and time
+
+Call duration
+
+Call type (incoming, outgoing, or missed)
+
+A call log merger combines records from different lists into one list. Depending on the requirements, it can also remove duplicate calls and arrange records chronologically.
+
+An Introduction to Linked Lists | Definition | Representation | Types | by Pepcoding | Medium
+Example
+Suppose we have two call logs.
+
+Call Log 1
+
+Phone number
+
+Time
+
+Duration
+
+9876543210
+
+10:00 AM
+
+120 sec
+
+9123456780
+
+11:30 AM
+
+60 sec
+
+Call Log 2
+
+Phone number
+
+Time
+
+Duration
+
+9988776655
+
+10:45 AM
+
+90 sec
+
+9876543210
+
+10:00 AM
+
+120 sec
+
+After merging, the combined log might look like this:
+
+Phone number
+
+Time
+
+Duration
+
+9876543210
+
+10:00 AM
+
+120 sec
+
+9988776655
+
+10:45 AM
+
+90 sec
+
+9123456780
+
+11:30 AM
+
+60 sec
+
+The repeated call is removed because both records represent the same call. In a real application, duplicate detection should use a reliable call identifier or a combination of fields rather than the phone number alone.
+
+2. Why use a linked list?
+A linked list is a linear data structure in which each node contains data and a pointer to the next node.
+
+Unlike an array, a linked list does not require all its elements to occupy consecutive memory locations.
+
+Structure of a call log node
+
+Call Record
+
+Phone number · Date/time · Duration · Call type
+
+Next pointer
+
+The next pointer stores the reference to the following node. The last node points to NULL.
+
+Advantages
+Dynamic memory allocation: nodes can be added as needed.
+
+Easy insertion and deletion when the relevant node or position is known.
+
+Merging can be performed by changing pointers rather than shifting array elements.
+
+Suitable for practicing pointer manipulation and dynamic data structures.
+
+Limitations
+Accessing a particular record requires traversal from the head.
+
+Each node requires extra memory for a pointer.
+
+Searching for duplicates can be expensive without an additional index.
+
+Incorrect pointer operations can cause lost nodes or memory errors.
+
+3. Project objectives
+The main objectives of the project are to:
+
+Store call records in a linked list.
+
+Insert new call records.
+
+Display all call records.
+
+Merge two call logs into a single list.
+
+Search for a call by phone number.
+
+Delete a call record.
+
+Sort calls by date and time.
+
+Optionally remove duplicate records.
+
+Analyze the time and space complexity of each operation.
+
+4. Types of call log merging
+There are three common approaches. Choose the one that matches your project requirements.
+
+Method
+
+How it works
+
+Typical use
+
+Simple merge
+
+Append one list after another
+
+Combine records without sorting
+
+Sorted merge
+
+Combine two already sorted lists in chronological order
+
+Maintain call history by date/time
+
+Merge with duplicate removal
+
+Combine records and skip duplicate calls
+
+Create a cleaner unified history
+
+For a college DSA project, merging two call logs in chronological order with a linked list is a good choice. The sorted merge algorithm runs in 
+O
+(
+n
++
+m
+)
+O(n+m) time for lists containing 
+n
+n and 
+m
+m records. 
+
+The DSA Handbook
++1
+
+5. Algorithm for the project
+Assume both input call logs are already sorted by date and time, from oldest to newest.
+
+Create two linked lists, list1 and list2.
+
+Insert the call records into their respective lists in chronological order.
+
+Set pointers p and q to the heads of the two lists.
+
+Create an empty merged list and a tail pointer.
+
+Compare the timestamps of the calls pointed to by p and q.
+
+Add the earlier call to the merged list and advance its pointer.
+
+Repeat until one input list is empty.
+
+Attach all remaining records from the other list.
+
+Display the merged call log.
+
+Flowchart
+Start
+Create two sorted call logs
+Compare the current timestamps
+Append the earlier call to merged list
+Are both lists exhausted?
+Yes
+Display merged log
+No
+Continue comparison
+6. C++ implementation
+The following is a complete, beginner-friendly program. It supports creating two call logs, displaying them, and merging them in chronological order.
+
+For simplicity, it uses integer timestamps: for example, 100 represents an earlier time than 200. A real system could use full date-time values.
+
+cpp
