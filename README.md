@@ -40,7 +40,7 @@ a single linked list while maintaining the required order.
 
 [⬆ Back to Project Index](#project-index)
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - C++
 - Data Structures and Algorithms
@@ -49,7 +49,7 @@ a single linked list while maintaining the required order.
 
 ---
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 - Understand linked lists, graphs, and trees.
 - Implement DSA concepts using C++.
@@ -59,7 +59,7 @@ a single linked list while maintaining the required order.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Name:**ritesh  
 **Course:** B.Tech  
