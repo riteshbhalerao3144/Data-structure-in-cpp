@@ -30,12 +30,12 @@ linked lists. The objective is to merge both lists into
 a single linked list while maintaining the required order.
 
 ### Project Resources
-- [GitHub Repository](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/Algorithms)
-- [Problem Statement](PASTE_LINKED_LIST_PROBLEM_PDF_URL)
-- [Source Code](PASTE_LINKED_LIST_SOURCE_CODE_URL)
-- [Algorithm](PASTE_LINKED_LIST_ALGORITHM_URL)
-- [Flowchart](PASTE_LINKED_LIST_FLOWCHART_URL)
-- [Output](PASTE_LINKED_LIST_OUTPUT_URL)
+- [GitHub Repository](https://github.com/riteshbhalerao3144/Data-structure-in-cpp)
+- [Problem Statement](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/problem%20statement)
+- [Source Code](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/source_code)
+- [Algorithm](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/Algorithms))
+- [Flowchart](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/flowchart)
+- [Output](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/output)
 - [Project Report](PASTE_LINKED_LIST_REPORT_URL)
 
 [⬆ Back to Project Index](#project-index)
