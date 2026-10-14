@@ -30,7 +30,7 @@ linked lists. The objective is to merge both lists into
 a single linked list while maintaining the required order.
 
 ### Project Resources
-- [GitHub Repository](PASTE_LINKED_LIST_REPOSITORY_URL)
+- [GitHub Repository](https://github.com/riteshbhalerao3144/Data-structure-in-cpp/tree/main/Algorithms)
 - [Problem Statement](PASTE_LINKED_LIST_PROBLEM_PDF_URL)
 - [Source Code](PASTE_LINKED_LIST_SOURCE_CODE_URL)
 - [Algorithm](PASTE_LINKED_LIST_ALGORITHM_URL)
