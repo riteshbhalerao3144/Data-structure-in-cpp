@@ -1,4 +1,4 @@
-# 📚 Data Structures and Algorithms – Unit 3 Projects
+# 📚 Data Structures and Algorithm(Linked list) – Unit 3 Projects
 
 Welcome to my DSA Unit 3 project collection!
 
@@ -61,7 +61,7 @@ a single linked list while maintaining the required order.
 
 ## 👨‍💻 Author
 
-**Name:** YOUR_NAME  
+**Name:**ritesh  
 **Course:** B.Tech  
 **Subject:** Data Structures and Algorithms
 
