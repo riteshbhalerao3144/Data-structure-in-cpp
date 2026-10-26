@@ -1,0 +1,63 @@
+2. Modified Algorithm
+
+Algorithm: Dynamic Road Junction Graph
+
+1. Start.
+
+2. Read the number of vertices v and edges E.
+
+3. Create an adjacency list for v vertices.
+
+4. Read all E road connections (u, v).
+
+5. Add v to adj [u] and u to adj [v].
+
+6. Display the menu:
+
+• 1) Display Graph
+
+• 2) Insert New Vertex
+
+• 3) Remove Edge O
+
+4) Degree and Direct Neighbours
+
+• 5) Exit
+
+Read the user's choice.
+
+If choice is 1, display the adjacency list.
+
+9. If choice is 2:
+
+• Insert a new vertex.
+
+Read the number of edges connected to
+
+it.
+
+Read the connected existing vertices.
+
+Update the adjacency list.
+10. If choice is 3:
+
+Read two vertices u and v.
+
+Remove the edge between them if it exists.
+
+Update the adjacency list.
+
+11. If choice is 4:
+
+Read the selected vertex x.
+Ο
+
+Calculate its degree.
+
+Display its degree and direct neighbours.
+
+12. If choice is 5, stop the program.
+
+13. For choices 1 to 4, return to the menu.
+
+14. Stop.
