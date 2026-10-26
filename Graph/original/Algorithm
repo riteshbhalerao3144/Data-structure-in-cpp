@@ -1,0 +1,27 @@
+1. Original Algorithm
+
+Algorithm: Road Junction Graph Using Degree Calculation
+
+1. Start.
+
+2. Read the number of vertices v and edges E.
+
+3. Create an adjacency list for v vertices.
+
+4. Read E road connections (u, v).
+
+5. Add v to adj [u] and u to adj [v] to create an undirected graph.
+
+6. Display the adjacency list.
+
+7. Calculate the degree of each vertex using
+
+degree = adj[i].size().
+
+8. Display the degree of each vertex.
+
+9. Read the threshold value K.
+
+10. Display all vertices whose degree is greater than or equal to k.
+
+11. Stop.
