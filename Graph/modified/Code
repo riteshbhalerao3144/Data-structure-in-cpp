@@ -1,0 +1,219 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+const int MAX = 100;
+
+// Function to display the graph
+void displayGraph(vector<int> adj[], int V)
+{
+    cout << "\nUpdated Graph:\n";
+
+    for (int i = 0; i < V; i++)
+    {
+        cout << "Junction " << i << " : ";
+
+        for (int j = 0; j < adj[i].size(); j++)
+        {
+            cout << adj[i][j] << " ";
+        }
+
+        cout << endl;
+    }
+}
+
+// Function to insert a new vertex and edges
+void insertVertex(vector<int> adj[], int &V)
+{
+    if (V >= MAX)
+    {
+        cout << "Maximum vertices reached!\n";
+        return;
+    }
+
+    int newVertex = V;
+
+    cout << "\nNew Junction " << newVertex << " created.\n";
+
+    int edges;
+
+    cout << "Enter number of roads connected to new junction: ";
+    cin >> edges;
+
+    for (int i = 0; i < edges; i++)
+    {
+        int u;
+
+        cout << "Enter existing junction connected to "
+             << newVertex << ": ";
+        cin >> u;
+
+        if (u < 0 || u >= V)
+        {
+            cout << "Invalid junction!\n";
+            i--;
+            continue;
+        }
+
+        adj[newVertex].push_back(u);
+        adj[u].push_back(newVertex);
+    }
+
+    V++;
+
+    cout << "\nVertex inserted successfully!\n";
+
+    displayGraph(adj, V);
+}
+
+// Function to remove an edge
+void removeEdge(vector<int> adj[], int V)
+{
+    int u, v;
+
+    cout << "\nEnter junctions of edge to remove (u v): ";
+    cin >> u >> v;
+
+    if (u < 0 || u >= V || v < 0 || v >= V)
+    {
+        cout << "Invalid junction!\n";
+        return;
+    }
+
+    bool removed = false;
+
+    // Remove v from adjacency list of u
+    for (int i = 0; i < adj[u].size(); i++)
+    {
+        if (adj[u][i] == v)
+        {
+            adj[u].erase(adj[u].begin() + i);
+            removed = true;
+            break;
+        }
+    }
+
+    // Remove u from adjacency list of v
+    for (int i = 0; i < adj[v].size(); i++)
+    {
+        if (adj[v][i] == u)
+        {
+            adj[v].erase(adj[v].begin() + i);
+            break;
+        }
+    }
+
+    if (removed)
+    {
+        cout << "Edge removed successfully!\n";
+    }
+    else
+    {
+        cout << "Edge does not exist!\n";
+    }
+
+    displayGraph(adj, V);
+}
+
+// Function to display degree and neighbours
+void vertexDetails(vector<int> adj[], int V)
+{
+    int vertex;
+
+    cout << "\nEnter junction number: ";
+    cin >> vertex;
+
+    if (vertex < 0 || vertex >= V)
+    {
+        cout << "Invalid junction!\n";
+        return;
+    }
+
+    cout << "\nJunction: " << vertex << endl;
+
+    cout << "Degree: " << adj[vertex].size() << endl;
+
+    cout << "Direct Neighbours: ";
+
+    for (int i = 0; i < adj[vertex].size(); i++)
+    {
+        cout << adj[vertex][i] << " ";
+    }
+
+    cout << endl;
+}
+
+int main()
+{
+    int V, E;
+
+    vector<int> adj[MAX];
+
+    cout << "Enter number of junctions: ";
+    cin >> V;
+
+    cout << "Enter number of roads: ";
+    cin >> E;
+
+    cout << "Enter road connections (u v):\n";
+
+    for (int i = 0; i < E; i++)
+    {
+        int u, v;
+
+        cin >> u >> v;
+
+        if (u < 0 || u >= V || v < 0 || v >= V)
+        {
+            cout << "Invalid junction!\n";
+            return 0;
+        }
+
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    int choice;
+
+    do
+    {
+        cout << "\n===== ROAD JUNCTION GRAPH =====\n";
+        cout << "1. Display Graph\n";
+        cout << "2. Insert New Vertex\n";
+        cout << "3. Remove Edge\n";
+        cout << "4. Degree and Direct Neighbours\n";
+        cout << "5. Exit\n";
+
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                displayGraph(adj, V);
+                break;
+
+            case 2:
+                insertVertex(adj, V);
+                break;
+
+            case 3:
+                removeEdge(adj, V);
+                break;
+
+            case 4:
+                vertexDetails(adj, V);
+                break;
+
+            case 5:
+                cout << "Program terminated.\n";
+                break;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
