@@ -1,0 +1,65 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int V, E;
+
+    cout << "Enter number of junctions: ";
+    cin >> V;
+
+    cout << "Enter number of roads: ";
+    cin >> E;
+
+    vector<int> adj[100];
+
+    int u, v;
+
+    cout << "Enter road connections:\n";
+
+    for (int i = 0; i < E; i++)
+    {
+        cin >> u >> v;
+
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    cout << "\nDegree of each junction:\n";
+
+    for (int i = 0; i < V; i++)
+    {
+        cout << "Junction " << i
+             << " : " << adj[i].size() << endl;
+    }
+
+    int threshold;
+
+    cout << "\nEnter degree threshold: ";
+    cin >> threshold;
+
+    cout << "\nJunctions having degree greater than "
+         << threshold << ":\n";
+
+    bool found = false;
+
+    for (int i = 0; i < V; i++)
+    {
+        if (adj[i].size() > threshold)
+        {
+            cout << "Junction " << i
+                 << " (Degree = "
+                 << adj[i].size() << ")" << endl;
+
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "No junction found.";
+    }
+
+    return 0;
+}
